@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 
 import Users from './components/Users/Users';
+import User from './components/Users/User';
 
 class App extends React.Component {
 
@@ -37,8 +38,11 @@ class App extends React.Component {
           <Route path="/about">
             <p>About</p>
           </Route>
-          <Route path="/users">
+          <Route exact path="/users">
             <Users></Users>
+          </Route>
+          <Route path="/users/:id">
+            <User></User>
           </Route>
           <Route path="/">
             <p>Home</p>

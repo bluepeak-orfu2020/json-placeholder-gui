@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 
 class Users extends React.Component {
 
@@ -15,10 +16,20 @@ class Users extends React.Component {
         })
     }
 
+    handleClick = (id) => {
+        this.props.history.push('/users/' + id)
+    }
+
     render() { // 2, 4
         console.log(this.state.users);
-        return <p>Du är på users</p>
+
+        const users = this.state.users;
+
+        const userElements = users ? 
+        users.map((user) => <p onClick={() => {this.handleClick(user.id)}} key={user.id}>{user.name}</p>) : "Loading..."
+
+        return userElements
     }
 }
 
-export default Users
+export default withRouter(Users)
