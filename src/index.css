@@ -30,3 +30,8 @@ a:visited {
   background-color: burlywood;
   border-radius: 4px;
 }
+
+.container-div {
+  margin-left: 50px;
+  margin-right: 50px;
+}

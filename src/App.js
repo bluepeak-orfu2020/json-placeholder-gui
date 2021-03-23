@@ -4,9 +4,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   NavLink
 } from "react-router-dom";
+
+import Users from './components/Users/Users';
 
 class App extends React.Component {
 
@@ -31,17 +32,19 @@ class App extends React.Component {
         <hr />
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+        <div className="container-div">
         <Switch>
           <Route path="/about">
             <p>About</p>
           </Route>
           <Route path="/users">
-            <p>Users</p>
+            <Users></Users>
           </Route>
           <Route path="/">
             <p>Home</p>
           </Route>
         </Switch>
+        </div>
       </div>
     </Router>
     );
