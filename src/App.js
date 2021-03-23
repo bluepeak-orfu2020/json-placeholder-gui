@@ -4,7 +4,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  NavLink
 } from "react-router-dom";
 
 class App extends React.Component {
@@ -16,19 +17,18 @@ class App extends React.Component {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <NavLink exact to="/">Home</NavLink>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <NavLink to="/about">About</NavLink>
             </li>
             <li>
-              <Link to="/users">Users</Link>
+              <NavLink to="/users">Users</NavLink>
             </li>
           </ul>
         </nav>
 
         <hr />
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
