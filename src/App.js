@@ -9,6 +9,7 @@ import {
 
 import Users from './components/Users/Users';
 import User from './components/Users/User';
+import PostsByUser from './components/Posts/PostsByUser';
 
 class App extends React.Component {
 
@@ -41,8 +42,11 @@ class App extends React.Component {
           <Route exact path="/users">
             <Users></Users>
           </Route>
-          <Route path="/users/:id">
+          <Route exact path="/users/:id">
             <User></User>
+          </Route>
+          <Route path="/users/:id/posts">
+            <PostsByUser></PostsByUser>
           </Route>
           <Route path="/">
             <p>Home</p>

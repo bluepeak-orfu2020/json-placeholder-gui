@@ -18,12 +18,21 @@ class User extends React.Component {
         })
     }
 
+    navigateToPosts = (id) => {
+        this.props.history.push('/users/' + id + "/posts")
+    }
+
     render() { // 2, 4
         const user = this.state.user
         let userDom;
 
         if (user && user.name) {
-            return <UserDetails user={user}></UserDetails>
+            return (
+            <div>
+                <UserDetails user={user}></UserDetails>
+                <hr />
+                <p className="user-list-item" onClick={() => {this.navigateToPosts(user.id)}}>{user.name} posts</p>
+            </div>)
         } else if (!user) {
             userDom = "Loading"
         } else if (!user.name) {
