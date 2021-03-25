@@ -35,3 +35,15 @@ a:visited {
   margin-left: 50px;
   margin-right: 50px;
 }
+
+.user-list-item {
+  cursor: pointer;
+}
+
+.user-list-item:hover {
+  background-color: lightgray;
+}
+
+.user-list-div {
+  width: 20%;
+}

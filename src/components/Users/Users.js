@@ -6,8 +6,8 @@ class Users extends React.Component {
     constructor(props) { // 1
         super(props);
         this.state = {};
-        
     }
+    
     componentDidMount() { // 3
         fetch('https://jsonplaceholder.typicode.com/users')
         .then((response) => response.json())
@@ -26,9 +26,11 @@ class Users extends React.Component {
         const users = this.state.users;
 
         const userElements = users ? 
-        users.map((user) => <p onClick={() => {this.handleClick(user.id)}} key={user.id}>{user.name}</p>) : "Loading..."
+        users.map((user) => <p className="user-list-item" onClick={() => {this.handleClick(user.id)}} key={user.id}>{user.name}</p>) 
+        : "Loading..."
 
-        return userElements
+        // return <div className="user-list-div">{userElements}</div>
+        return <enFunktionsKomponent name="Linus"></enFunktionsKomponent>
     }
 }
 
